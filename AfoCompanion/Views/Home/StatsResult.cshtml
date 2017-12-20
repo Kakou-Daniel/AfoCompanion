@@ -1,0 +1,110 @@
+﻿@model AfoCompanion.Models.PlayerStats
+
+@{
+    ViewBag.Title = "StatsResult";
+}
+
+
+
+
+<div class="stat-box">
+    
+    <h1> @Model.NAME lvl @Model.LV</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="@Url.Content(Model.SKIN)" alt="avatar" />
+        </div>
+        <div class="avatar-data col-md-8">
+            <ul>
+                <li># of Wins @Model.WIN</li>
+                <li># of Losses @Model.LOSE</li>
+                <li>W/L ratio: @Model.RATIO %</li>
+                <li>Base HP: @Model.HP </li>
+                <li>Base Agility: @Model.AGL </li>
+                <li>Base Speed: @Model.SPD</li>
+                <li>Base Strength: @Model.STR</li>
+                <li>Win Saying: @Model.WFS</li>
+                <li>Lose Saying: @Model.LFS</li>
+                <li>Location: <img src="@Url.Content(Model.FLAGIMG)" alt="flag" style="width: 32px; height: 32px;" /> @Model.LOC</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="pet-box col-md-12">
+    @if (Model.PEX.Count > 0)
+    {
+        <h1>Pets equipped</h1>
+        foreach (var pet in Model.PEX)
+        {
+            if(Model.PEX.Count == 3)
+            {
+                @:<div class="pet-info col-md-4">
+            }
+            else if(Model.PEX.Count == 2)
+            {
+                @:<div class="pet-info col-md-6">
+            }
+            else
+            {
+                @:<div class="pet-info col-md-12">
+            }
+
+        <div class="row">
+            <div class="col-md-12">
+                <img src="@Url.Content("~/Images/Pets/"+@pet.ID+".png")" alt="pet" style="width: 200px; height: 150px;" />
+                <div class="pet-data row">
+                    <div class="gem col-md-3">+@(pet.HP / 10)<img src="~/Images/Gems/hp.png" style="width: 48px; height: 48px;" /></div>
+                    <div class="gem col-md-3"><span>+@(pet.SPD / 10)<img src="~/Images/Gems/spd.png" style="width: 48px; height: 48px;" /></span></div>
+                    <div class="gem col-md-3"><span>+@(pet.STR / 10)<img src="~/Images/Gems/str.png" style="width: 48px; height: 48px;" /></span></div>
+                    <div class="gem col-md-3"><span>+@(pet.AGL / 10)<img src="~/Images/Gems/ag.png" style="width: 48px; height: 48px;" /></span></div>
+                </div>
+            </div>
+
+        </div>
+    @:</div>
+
+    }
+
+}
+
+    
+</div>
+
+@if(Model.RPEX.Count > 0)
+{
+    <div class="pets-bought col-md-12">
+        <h1>Pets bought</h1>
+        <div class="row">
+            @{ 
+                int i = 0;
+                foreach(var rpex in Model.RPEX)
+                {
+                    if (i > 0 && i % 3 == 0)
+                    {
+                        @:</div><div class="row">
+                    }
+                    <div class="col-md-4">
+                        
+                        <img src="@Url.Content("~/Images/Pets/"+@rpex.ID+".png")" alt="pet" style="width: 200px; height: 150px;" />
+                        <div class="pet-data row">
+                            <div class="gem col-md-3">+@(rpex.HP / 10)<img src="~/Images/Gems/hp.png" style="width: 48px; height: 48px;" /></div>
+                            <div class="gem col-md-3"><span>+@(rpex.SPD / 10)<img src="~/Images/Gems/spd.png" style="width: 48px; height: 48px;" /></span></div>
+                            <div class="gem col-md-3"><span>+@(rpex.STR / 10)<img src="~/Images/Gems/str.png" style="width: 48px; height: 48px;" /></span></div>
+                            <div class="gem col-md-3"><span>+@(rpex.AGL / 10)<img src="~/Images/Gems/ag.png" style="width: 48px; height: 48px;" /></span></div>
+                        </div>
+                    </div>
+                    i++;
+                }
+            }
+        </div>
+    </div>
+}
+
+
+
+
+<div class="back-btn">
+
+        <button type="submit" id="back-btn" onclick="window.history.go(-1); return false;"><img src="~/Images/Icons/glyphicons-217-circle-arrow-left.png" /> Go Back</button>
+</div>

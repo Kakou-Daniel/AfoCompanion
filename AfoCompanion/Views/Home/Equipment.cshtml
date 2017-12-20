@@ -1,0 +1,28 @@
+﻿@model  List<AfoCompanion.Models.Equipment>
+
+@{
+    ViewBag.Title = "Equipment";
+}
+
+<div class="equipment-header">Equipment</div>
+
+<div class="row">
+
+@{
+    int i = 0;
+    foreach (var e in Model)
+    {
+        if (i > 0 && i % 6 == 0)
+        {
+            @:</div><div class="row">
+        }
+        <div class="equipment-data col-md-2">
+            <h4><a href="@Url.Action("CheckEquipment", "Home", new { equipmentID = e.eid })">@e.name</a></h4>
+            <a href="@Url.Action("CheckEquipment", "Home", new { equipmentID = e.eid })"><img src="@Url.Content(e.imgPath)" alt="equipment" /></a>
+            <p>@e.description</p>
+        </div>
+        i++;
+    }
+}
+</div>
+

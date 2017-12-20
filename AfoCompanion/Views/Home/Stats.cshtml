@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Stats";
+}
+
+<div id="search-form" class="box">
+    <form action="@Url.Action("StatsPost", "Home")">
+        <h3>Statistics</h3>
+        <input type="text" id="name" name="avatar_name" placeholder="Enter avatar name" />
+        <button type="submit" id="submit-btn" style="font-family: GOTHIC;"><img src="~/Images/Icons/glyphicons-28-search.png" /> Search</button>
+    </form>
+    <div class="error-msg">
+        @ViewBag.Error
+    </div>
+   
+</div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+

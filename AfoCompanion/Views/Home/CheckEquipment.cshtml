@@ -1,0 +1,87 @@
+﻿@model AfoCompanion.Models.EquipmentInfoViewModel
+
+@{
+    ViewBag.Title = "CheckEquipment";
+}
+
+<div class="info-equipment-header">Equipment Info</div>
+
+<div class="box-equipment">
+    <h2>@Model.mainEquipment.name (lvl @Model.mainEquipment.req_lvl)</h2>
+    @{
+        if (Model.precEquipment.upgradable)
+        {
+            <span> <a href="@Url.Action("CheckEquipment", "Home", new { equipmentID = Model.precEquipment.eid })"><img src="~/Images/left-arrow.png" alt="arrow" title="See previous upgrade" style="height:30px" /></a></span>
+        }
+    }
+    <img src="@Url.Content(Model.mainEquipment.imgPath)" class="img-box-equipment" alt="weapon" />
+    @{
+        if (Model.mainEquipment.upgradable)
+        {
+            <span> <a href="@Url.Action("CheckEquipment", "Home", new { equipmentID = Model.mainEquipment.up_itemId })"><img src="~/Images/arrow-145766_960_720.png" alt="arrow" title="See next upgrade" style="height:30px" /></a></span>
+        }
+    }
+
+
+    @{
+        if (Model.mainEquipment.stat_hp != 0)
+        {
+            <h3><img src="~/Images/hp.png" alt="hp" /> +@Model.mainEquipment.stat_hp%</h3>
+        }
+        if (Model.mainEquipment.stat_ag != 0)
+        {
+            <h3><img src="~/Images/agility.png" alt="ag" /> +@Model.mainEquipment.stat_ag%</h3>
+        }
+        if (Model.mainEquipment.stat_spd != 0)
+        {
+            <h3><img src="~/Images/speed.png" alt="spd" /> +@Model.mainEquipment.stat_spd%</h3>
+        }
+    }
+    <hr />
+
+
+
+    <div class="row">
+        <div class="equipment-break col-md-4">
+            <h3>Disassemble</h3>
+            <ul>
+                <li><img src="~/Images/store_iron.png" alt="iron" style="width:60px" /> x @Model.mainEquipment.break_iron irons</li>
+                <li><img src="~/Images/store_stone.png" alt="stone" style="width:60px" /> x @Model.mainEquipment.break_stone stones</li>
+                <li><img src="~/Images/store_wood.png" alt="wood" style="width:60px" /> x @Model.mainEquipment.break_wood woods</li>
+            </ul>
+        </div>
+        <div class="equipment-shop col-md-4">
+            <h3>Price in shop</h3>
+            <p><img src="~/Images/icon_gold_item.png" alt="gold" style="width:60px" /> x @Model.mainEquipment.price_shop</p>
+        </div>
+        <div class="equipment-sell col-md-4">
+            <h3>Sell equipment</h3>
+            <p><img src="~/Images/icon_gold_item.png" alt="gold" style="width:60px" /> x @Model.mainEquipment.price_sell</p>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="to-obtain-box">
+    @{
+        if (Model.precEquipment.up_itemId == Model.mainEquipment.eid)
+        {
+            <h2>To obtain @Model.mainEquipment.name.ToLower()</h2>
+            <ul>
+                <li><img src="@Url.Content(Model.precEquipment.imgPath)" alt="equipment" style="width:60px" /></li>
+                <li><img src="~/Images/alchemy.png" alt="alchemy-potion" style="width:60px" /></li>
+                <li><img src="@Url.Content(Model.precEquipment.crystalImgPath)" alt="crystal" style="width:60px" /> x @Model.precEquipment.crystal_amount</li>
+                @{
+                    if (Model.precEquipment.diamonds != 0)
+                    {
+                        <li><img src="~/Images/icon_diamond_item.png" style="width:60px" /> x @Model.precEquipment.diamonds diamonds</li>
+                    }
+                }
+                <li><img src="~/Images/store_iron.png" alt="iron" style="width:60px" /> x @Model.precEquipment.upgrade_iron irons</li>
+                <li><img src="~/Images/store_stone.png" alt="stone" style="width:60px" /> x @Model.precEquipment.upgrade_stone stones</li>
+                <li><img src="~/Images/store_wood.png" alt="wood" style="width:60px" /> x @Model.precEquipment.upgrade_wood woods</li>
+            </ul>
+                    }
+    }
+</div>

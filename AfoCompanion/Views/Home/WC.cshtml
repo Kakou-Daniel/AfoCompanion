@@ -1,0 +1,30 @@
+﻿@model  List<AfoCompanion.Models.WcMsg>
+
+@{
+    ViewBag.Title = "WC";
+}
+
+<div class="wc-header">World Channel</div>
+
+@if(ViewBag.WcMsgs == "ok")
+{
+    foreach (var post in Model)
+    {
+        <div class="wc-msg">
+            <a href="@Url.Action("StatsPost", "Home", new { avatar_name = post.Name })"> <span class="wc-avatar"><img id="img-wc-avatar" src="@Url.Content(post.Skin)" alt="avatar" /></span></a>
+            <h3><a href="@Url.Action("StatsPost", "Home", new { avatar_name = post.Name })">@post.Name lvl @post.Lvl</a></h3>
+            <p>@post.Message</p>
+            <h5><img src="@Url.Content(post.FLAGIMG)" alt="flag" style="width: 32px; height: 32px;" /> @post.Location  @post.Date.ToString(@"d\d\:h\h\:m\m\:s\s") ago</h5>
+</div>
+    }
+}
+else
+{
+    <div class="wc-error">
+        Sorry, there is no WC posts right now...Try posting a message and try again!
+        <div><img src="../Images/cheer-emoticon.gif" /></div>
+    </div>
+}
+
+
+

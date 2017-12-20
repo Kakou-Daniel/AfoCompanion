@@ -1,0 +1,454 @@
+﻿
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url(../fonts/glyphicons-halflings-regular.eot);
+}
+
+@font-face {
+    font-family: 'raidercrusader';
+    src: url('../fonts/raidercrusader.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'MORPHEUS';
+    src: url('../fonts/MORPHEUS.TTF') format('truetype');
+}
+@font-face {
+    font-family: 'GOTHIC';
+    src: url('../fonts/GOTHIC.TTF') format('truetype');
+}
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    position: relative;
+    overflow: auto;
+    color: white;
+    background: url('../Images/background.png') no-repeat fixed;
+    background-size: cover;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+select,
+textarea {
+    max-width: 280px;
+}
+
+hr{
+    width:75%;
+}
+
+#footer {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    color: white;
+    margin-top:10px;
+    font-size: 15px;
+    text-align:center;
+}
+
+.welcome-txt{
+    position:absolute;
+    right:0px;
+    left:0px;
+    text-align:center;
+    font-size:25px;
+}
+.wc-header, .war-header, .video-header, .photos-header, .weapon-header, .info-weapon-header, .equipment-header, .info-equipment-header {
+    font-family: 'GOTHIC' sans-serif;
+    font-weight: 100;
+    font-size: 40px;
+    letter-spacing: 4px;
+    text-align: center;
+}
+.box h1 {
+    font-family: 'GOTHIC' sans-serif;
+    font-weight:100;
+    font-size:40px;
+    letter-spacing:4px;
+}
+
+.stat-box h1 {
+    font-family: 'GOTHIC' sans-serif;
+    font-weight: 100;
+    font-size: 35px;
+    letter-spacing: 4px;
+}
+
+.avatar-data{
+    margin-top:50px;
+}
+
+.avatar-data ul li, .gem {
+    font-family: 'GOTHIC' sans-serif;
+    font-weight:bold;
+    font-size:24px;
+    text-align:left;
+}
+
+.box h4, .wc-msg h3 {
+    font-family: 'GOTHIC' sans-serif;
+    font-size: 20px;
+    letter-spacing: 3px;
+    font-weight: 100;
+}
+
+.pet-box, .pets-bought {
+    background: rgba(0, 0, 0, 0.4);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.pet-box h1, .pets-bought h1{
+    color: white;
+    font-family: 'GOTHIC' sans-serif;
+    letter-spacing: 3px;
+}
+
+.pet-info, .pet-box h1 {
+    color: white;
+    font-family: 'GOTHIC' sans-serif;
+}
+.box, .stat-box{
+    background: rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    text-align: center;
+    margin: auto;
+    margin-top: 5%;
+    color: white;
+    font-family: 'GOTHIC' sans-serif;
+}
+.box-img{
+    width:130px;
+    height:130px;
+}
+
+#name{
+    display:block;
+}
+
+form{
+    margin: 0 auto;
+    width:320px;
+}
+.pet-data{
+    width:200px;
+    margin:0 auto;
+}
+.gem{
+    padding-right:0px;
+}
+.wc-msg img #img-wc-avatar {
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+.box p {
+    text-align: center;
+    font-family: 'GOTHIC' sans-serif;
+    font-size:16px;
+}
+
+.wc-msg p{
+    margin-top:30px;
+    margin-bottom:30px;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.wc-msg {
+    width:500px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    text-align: center;
+    margin: auto;
+    margin-top: 5%;
+    color: white;
+    font-family: 'GOTHIC' sans-serif;
+}
+
+.wc-msg h5{
+    font-family: 'GOTHIC' sans-serif;
+    font-size: 16px;
+    letter-spacing: 3px;
+    font-weight: 100;
+}
+
+#myCarousel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height:250px;
+    
+}
+
+.navbar-header #logo {
+    font-family: 'raidercrusader';
+    color:white;
+    font-weight:bold;
+    font-size:x-large;
+}
+
+.error-msg{
+    margin-top:20px;
+    color:red;
+    font-family:sans-serif;
+    font-size:15px;
+    font-weight:bold;
+}
+
+#search-form h3{
+    text-align: center;
+    font-family:GOTHIC;
+    font-size:38px;
+}
+
+::-webkit-input-placeholder {
+    font-family: GOTHIC;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    font-family: GOTHIC;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+    font-family: GOTHIC;
+}
+
+:-ms-input-placeholder {
+    font-family: GOTHIC;
+}
+#search-form button:hover {
+    color: rgb(7, 109, 150);
+    font-weight: bold;
+    border: 1px solid rgb(7, 109, 150);
+}
+#search-form #submit-btn:hover {
+    background: white;
+}
+#search-form button, #search-form input, .back-btn button {
+    width: 320px;
+    height: 40px;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: sans-serif;
+    color: white;
+    background: rgba(0, 0, 0, 0.3);
+    outline: none;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: inset 0px -5px 45px rgba(100, 100, 100, 0.2), 0px 1px 1px rgba(255, 255, 255, 0.2);
+}
+#submit-btn{
+    display:block;
+}
+#search-form #submit-btn, .back-btn #back-btn {
+    text-align: center;
+    font-size: 18px;
+    background: rgb(7, 109, 150);
+    vertical-align: central;
+    padding: 0px;
+}
+.back-btn #back-btn:hover{
+    color: rgb(197, 31, 25);
+    background: white;
+    font-weight:bold;
+    border: 1px solid rgb(197, 31, 25);
+}
+.back-btn #back-btn {
+    text-align: center;
+    font-size: 18px;
+    background: rgb(197, 31, 25);
+    vertical-align: central;
+    padding: 0px;
+    font-family:GOTHIC;
+}
+
+.back-btn #back-btn {
+    margin: 10px auto;
+    display: block;
+}
+
+.stat-panel {
+    overflow: hidden;
+    width:30%;
+}
+
+
+.stat-header {
+    height: 50px;
+    border: 1px solid blue;
+}
+
+.pic-container {
+    float:left;
+    border: 1px solid green;
+    width:300px;
+}
+.player-stat {
+    width: 200px;
+    max-width:40%;
+    border: 1px solid red;
+    overflow: hidden;
+    min-height: 400px;
+}
+
+.stat-text {
+    color: #06193b;
+    font-family: 'MORPHEUS';
+    font-size:14px;
+}
+
+.panel > .panel-heading {
+    background-image: none;
+    background-color: #142a50;
+    color: white;
+    font-family: 'raidercrusader';
+    font-size:20px;
+}
+
+.war-basics, .war-strats, .war-summary {
+    width: 700px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    text-align: justify;
+    margin: auto;
+    margin-top: 5%;
+    
+}
+
+.notice {
+    width: 700px;
+    height:200px;
+    padding: 40px;
+    text-align: justify;
+    margin: auto;
+    margin-top: 5%;
+    background-image: url('../Images/sheet.png');
+    background-size:100% 100%;
+}
+
+.war-basics p, .war-strats p, .war-summary p, .war-summary ul li, .wc-error {
+    color: white;
+    font-family: GOTHIC;
+    font-size: 16px;
+}
+
+.notice {
+    position: relative;
+    color: white;
+    font-family: GOTHIC;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: bold;
+    color: red;
+}
+
+.notice img{
+    position:absolute;
+    top:0px;
+    left:0px;
+    height:60px;
+}
+
+.wc-error {
+    width: 500px;
+    background: rgba(0, 0, 0, 0.4);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.col-md-4:hover img .photo-section {
+    -webkit-transform: scale(1.5); /* Safari and Chrome */
+    -moz-transform: scale(1.5); /* Firefox */
+    -ms-transform: scale(1.5); /* IE 9 */
+    -o-transform: scale(1.5); /* Opera */
+    transform: scale(1.5);
+    z-index: 10;
+}
+
+.col-md-4 img .photo-section {
+    -webkit-transition: all 1s ease; /* Safari and Chrome */
+    -moz-transition: all 1s ease; /* Firefox */
+    -o-transition: all 1s ease; /* Opera */
+    transition: all 1s ease;
+}
+
+.weapon-data, .equipment-data {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid white;
+    height: 204px;
+    margin-top: 10px;
+}
+
+.box-weapon, .box-equipment {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid white;
+    margin-top: 10px;
+    font-family: GOTHIC;
+}
+
+.to-obtain-box {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid white;
+    margin-top: 10px;
+    font-family: GOTHIC;
+}
+
+.to-obtain-box h2, .box-weapon h2, .box-equipment h2{
+    text-align:center;
+    font-weight:bold;
+}
+
+.to-obtain-box li{
+    list-style-type: none;
+    margin-left:0px;
+    padding-left:0px;
+    display: inline-block;
+}
+
+.weapon-data img, .img-box-weapon, .equipment-data img, .img-box-equipment {
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.weapon-data p, .equipment-data p {
+    font-family: GOTHIC;
+}
+
+.weapon-data h4, .equipment-data h4 {
+    font-family: GOTHIC;
+}
+
+.weapon-data h4 a, .equipment-data h4 a, .wc-msg h3 a{
+    color:white;
+}
+
+    .weapon-data h4 a:hover, .equipment-data h4 a:hover, .wc-msg h3 a:hover{
+        color: white;
+        text-decoration: underline;
+    }
+
+.weapon-break ul li, .weapon-shop p, .weapon-sell p, .to-obtain-box li, .equipment-break ul li, .equipment-shop p, .equipment-sell p {
+    font-size: 20px;
+}
